@@ -54,34 +54,27 @@ const showLoaders = () => {
   }, 2000);
 };
 
+const displayData = (element, value) => {
+  if (typeof value === "number" || typeof value === "string") {
+    element.innerHTML = value.toLocaleString();
+  } else {
+    element.innerHTML = "Data not available";
+  }
+};
+
 const handleSuccessfulFetch = (result) => {
   if (result && result.response) {
     let data = result.response[0];
     countryName.innerHTML = `Country: ${data.country}`;
     population.innerHTML = `Populaton: ${data.population.toLocaleString()}`;
 
-    /* Checks if the data is a Number or Null. */
-    typeof data.cases.active === "number" ||
-    typeof data.cases.active === "string"
-      ? (activeCases.innerHTML = data.cases.active.toLocaleString())
-      : (activeCases.innerHTML = "Data not available");
-    typeof data.cases.new === "number" || typeof data.cases.new === "string"
-      ? (newCases.innerHTML = data.cases.new.toLocaleString())
-      : (newCases.innerHTML = "Data not available");
-    typeof data.cases.recovered === "number" ||
-    typeof data.cases.recovered === "string"
-      ? (recoveredCases.innerHTML = data.cases.recovered.toLocaleString())
-      : (recoveredCases.innerHTML = "Data not available");
-    typeof data.cases.total === "number" || typeof data.cases.total === "string"
-      ? (totalCases.innerHTML = data.cases.total.toLocaleString())
-      : (totalCases.innerHTML = "Data not available");
-    typeof data.deaths.total === "number" ||
-    typeof data.deaths.total === "string"
-      ? (totalDeaths.innerHTML = data.deaths.total.toLocaleString())
-      : (totalDeaths.innerHTML = "Data not available");
-    typeof data.tests.total === "number" || typeof data.tests.total === "string"
-      ? (totalTests.innerHTML = data.tests.total.toLocaleString())
-      : (totalTests.innerHTML = "Data not available");
+    /* Checks if the data is a Number, String or Null. */
+    displayData(activeCases, data.cases.active);
+    displayData(newCases, data.cases.new);
+    displayData(recoveredCases, data.cases.recovered);
+    displayData(totalCases, data.cases.total);
+    displayData(totalDeaths, data.deaths.total);
+    displayData(totalTests, data.tests.total);
 
     errorMessage.style.display = "none";
     inputElement.value = "";
