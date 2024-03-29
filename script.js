@@ -61,22 +61,25 @@ const handleSuccessfulFetch = (result) => {
     population.innerHTML = `Populaton: ${data.population.toLocaleString()}`;
 
     /* Checks if the data is a Number or Null. */
-    typeof data.cases.active === "number"
+    typeof data.cases.active === "number" ||
+    typeof data.cases.active === "string"
       ? (activeCases.innerHTML = data.cases.active.toLocaleString())
       : (activeCases.innerHTML = "Data not available");
-    typeof data.cases.new === "number"
+    typeof data.cases.new === "number" || typeof data.cases.new === "string"
       ? (newCases.innerHTML = data.cases.new.toLocaleString())
       : (newCases.innerHTML = "Data not available");
-    typeof data.cases.recovered === "number"
+    typeof data.cases.recovered === "number" ||
+    typeof data.cases.recovered === "string"
       ? (recoveredCases.innerHTML = data.cases.recovered.toLocaleString())
       : (recoveredCases.innerHTML = "Data not available");
-    typeof data.cases.total === "number"
+    typeof data.cases.total === "number" || typeof data.cases.total === "string"
       ? (totalCases.innerHTML = data.cases.total.toLocaleString())
       : (totalCases.innerHTML = "Data not available");
-    typeof data.deaths.total === "number"
+    typeof data.deaths.total === "number" ||
+    typeof data.deaths.total === "string"
       ? (totalDeaths.innerHTML = data.deaths.total.toLocaleString())
       : (totalDeaths.innerHTML = "Data not available");
-    typeof data.tests.total === "number"
+    typeof data.tests.total === "number" || typeof data.tests.total === "string"
       ? (totalTests.innerHTML = data.tests.total.toLocaleString())
       : (totalTests.innerHTML = "Data not available");
 
