@@ -1,0 +1,12 @@
+body {
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  position: relative;
+  background-image: url("../assets/covid-19-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,33 @@
+.get-data-button {
+  font-size: 1.25rem;
+  background-color: var(--get-btn-bg);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  width: 130px;
+  height: 45px;
+  transition: 0.3s;
+}
+
+.get-data-button:hover {
+  cursor: pointer;
+  background-color: var(--get-btn-hover);
+  box-shadow: 0 0 0 5px var(--get-btn-shadow);
+}
+
+.clear-data-button {
+  font-size: 1.25rem;
+  background-color: var(--clear-btn-bg);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  width: 130px;
+  height: 45px;
+  transition: 0.3s;
+}
+
+.clear-data-button:hover {
+  cursor: pointer;
+  background-color: var(--clear-btn-hover);
+  box-shadow: 0 0 0 5px var(--clear-btn-shadow);
+}

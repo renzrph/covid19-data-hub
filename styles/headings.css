@@ -1,0 +1,16 @@
+.project-title-container {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+h1 {
+  padding: 0.5rem 0;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+h2 {
+  padding-top: 1.5rem;
+  font-size: 2rem;
+}

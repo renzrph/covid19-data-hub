@@ -1,0 +1,15 @@
+.error-message {
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-border);
+  padding: 20px 30px;
+  display: none;
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 20px;
+  text-shadow: 1px 1px var(--error-text-shadow);
+  text-wrap: wrap;
+}
