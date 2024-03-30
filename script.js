@@ -30,6 +30,7 @@ const getData = async (url) => {
 };
 
 const clearData = () => {
+  inputElement.value = "";
   countryName.innerHTML = "";
   population.innerHTML = "";
   activeCases.innerHTML = "";
