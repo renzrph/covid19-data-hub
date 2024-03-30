@@ -30,7 +30,6 @@ const getData = async (url) => {
 };
 
 const clearData = () => {
-  inputElement.value = "";
   countryName.innerHTML = "";
   population.innerHTML = "";
   activeCases.innerHTML = "";
@@ -83,7 +82,6 @@ const handleSuccessfulFetch = (result) => {
 };
 
 const handleFetchError = () => {
-  inputElement.value = "";
   countryName.innerHTML = "Invalid Country Name";
   population.innerHTML = `Data not available`;
   activeCases.innerHTML = "Data not available";
@@ -93,6 +91,7 @@ const handleFetchError = () => {
   totalCases.innerHTML = "Data not available";
   totalDeaths.innerHTML = "Data not available";
   totalTests.innerHTML = "Data not available";
+  inputElement.value = "";
 };
 
 const showStats = () => {
