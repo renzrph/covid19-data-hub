@@ -83,6 +83,7 @@ const handleSuccessfulFetch = (result) => {
 };
 
 const handleFetchError = () => {
+  inputElement.value = "";
   countryName.innerHTML = "Invalid Country Name";
   population.innerHTML = `Data not available`;
   activeCases.innerHTML = "Data not available";
