@@ -42,6 +42,10 @@ const clearData = () => {
 };
 
 const showLoaders = () => {
+  if (inputElement.value.trim() === "") {
+    return alert("Enter a country name.");
+  }
+
   clearData();
   loaders.forEach((loader) => {
     loader.style.display = "block";
