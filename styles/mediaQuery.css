@@ -20,9 +20,6 @@
 /* Mobile */
 @media only screen and (max-width: 767px) {
   body {
-    background-image: url("../assets/covid-19-bg.jpg");
-    background-size: cover;
-    background-repeat: repeat;
     min-width: 420px;
   }
 
