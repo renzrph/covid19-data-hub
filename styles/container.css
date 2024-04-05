@@ -1,9 +1,8 @@
 .container {
-  color: var(--black);
+  color: var(--text);
   width: 100%;
   max-width: 1050px;
-  background: linear-gradient(to bottom right, #ffffff, #000f1c);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.9);
+  background-color: var(--container-bg);
   border-radius: 1.5rem;
   margin-top: 50px;
 }

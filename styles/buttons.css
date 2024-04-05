@@ -1,7 +1,7 @@
 .get-data-button {
   font-size: 1.25rem;
   background-color: var(--get-btn-bg);
-  color: var(--white);
+  color: var(--text);
   border: none;
   border-radius: 8px;
   width: 130px;
@@ -18,7 +18,7 @@
 .clear-data-button {
   font-size: 1.25rem;
   background-color: var(--clear-btn-bg);
-  color: var(--white);
+  color: var(--text);
   border: none;
   border-radius: 8px;
   width: 130px;

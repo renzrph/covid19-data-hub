@@ -14,3 +14,7 @@ h2 {
   padding-top: 1.5rem;
   font-size: 2rem;
 }
+
+.icon {
+  color: var(--icons);
+}
