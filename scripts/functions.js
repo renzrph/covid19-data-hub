@@ -1,26 +1,3 @@
-const getDataBtn = document.querySelector(".get-data-button");
-const clearDataBtn = document.querySelector(".clear-data-button");
-const inputElement = document.getElementById("input");
-const activeCases = document.querySelector(".active-cases");
-const newCases = document.querySelector(".new-cases");
-const recoveredCases = document.querySelector(".recovered-cases");
-const totalCases = document.querySelector(".total-cases");
-const totalDeaths = document.querySelector(".total-deaths");
-const totalTests = document.querySelector(".total-tests");
-const countryName = document.querySelector(".country-name");
-const population = document.querySelector(".population");
-const errorMessage = document.querySelector(".error-message");
-const cases = document.querySelectorAll(".cases");
-const loaders = document.querySelectorAll(".loader");
-
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "17b1f86227msh93f8dc5215801b7p1896a2jsn1a24efa1a709",
-    "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
-  },
-};
-
 /* ---------- Helper Functions ---------- */
 const getData = async (url) => {
   const response = await fetch(url, options);
@@ -98,19 +75,17 @@ const handleFetchError = () => {
   inputElement.value = "";
 };
 
-const showStats = () => {
-  const country = inputElement.value;
-  let url = `https://covid-193.p.rapidapi.com/statistics?country=${country}`;
-
-  getData(url)
-    .then((result) => {
-      handleSuccessfulFetch(result);
-      console.log(result);
-    })
-    .catch((error) => {
-      handleFetchError();
-      console.error(error);
-    });
+const showStats = async () => {
+  try {
+    const country = inputElement.value;
+    let url = `https://covid-193.p.rapidapi.com/statistics?country=${country}`;
+    const result = await getData(url);
+    handleSuccessfulFetch(result);
+    console.log(result);
+  } catch (error) {
+    handleFetchError();
+    console.error(error);
+  }
 };
 
 // Event Listeners
@@ -121,5 +96,15 @@ clearDataBtn.addEventListener("click", clearData);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     showLoaders();
+  }
+});
+
+// Input validation letters only
+inputElement.addEventListener("input", () => {
+  const lettersOnly = /^[A-Za-z]+$/;
+  const inputValue = inputElement.value;
+
+  if (!inputValue.match(lettersOnly)) {
+    inputElement.value = inputValue.replace(/[^A-Za-z]/g, "");
   }
 });
